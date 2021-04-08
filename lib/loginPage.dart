@@ -1,17 +1,35 @@
+import 'dart:ui';
+import 'package:firebase_git/constants.dart';
 import 'package:flutter/material.dart';
 
-class loginPage extends StatefulWidget {
-  loginPage({Key key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key key}) : super(key: key);
 
   @override
-  _loginPageState createState() => _loginPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _loginPageState extends State<loginPage> {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: kSecondaryColor,
+      body: Stack(
+        children: <Widget>[
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                height: screenSize.height * .8,
+                width: screenSize.width,
+                decoration: BoxDecoration(color: kPrimaryColor),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
