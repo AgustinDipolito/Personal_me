@@ -13,7 +13,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-
+    double mitadW = screenSize.width / 2;
+    // double mitadH = screenSize.height / 2;
     return Scaffold(
       backgroundColor: kSecondaryColor,
       body: Stack(
@@ -28,27 +29,29 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-          Positioned(
-              top:
-                  0, //(screenSize.height / 2 - ((screenSize.height * 0.7) / 2)),
-              left: 0, // (screenSize.width * 0.25) - screenSize.width * 0.25,
-              child: Container(
-                height: screenSize.width * 0.5,
-                width: screenSize.width * 0.5,
-                decoration: new BoxDecoration(
-                    shape: BoxShape.circle, color: kPrimaryColor),
-              )),
-          Positioned(
-              top: 0,
-              left: screenSize.width / 2,
-              child: Container(
-                height: screenSize.width * 0.5,
-                width: screenSize.width * 0.5,
-                decoration: new BoxDecoration(
-                    shape: BoxShape.circle, color: kSecondaryColor),
-              ))
+          //seccion de circulares
+          positionedCircle(screenSize, 0, 0, kPrimaryColor, mitadW),
+          positionedCircle(screenSize, mitadW, 0, kSecondaryColor, mitadW),
+          positionedCircle(
+              screenSize, 0, screenSize.height * .8, kSecondaryColor, mitadW),
+          positionedCircle(screenSize, mitadW, screenSize.height * .8,
+              kPrimaryColor, mitadW),
+          positionedCircle(screenSize, mitadW, screenSize.height * .8,
+              kSecondaryColor, mitadW * .65)
         ],
       ),
     );
+  }
+
+  Positioned positionedCircle(
+      Size screenSize, double x, double y, Color color, double radio) {
+    return Positioned(
+        top: y,
+        left: x,
+        child: Container(
+          height: radio,
+          width: radio,
+          decoration: new BoxDecoration(shape: BoxShape.circle, color: color),
+        ));
   }
 }
