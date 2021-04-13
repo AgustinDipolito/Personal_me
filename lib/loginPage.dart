@@ -15,6 +15,8 @@ class _LoginPageState extends State<LoginPage> {
     Size screenSize = MediaQuery.of(context).size;
     double mitadW = screenSize.width / 2;
     // double mitadH = screenSize.height / 2;
+    //SystemChrome.setEnabledSystemUIOverlays([]);
+
     return Scaffold(
       backgroundColor: kSecondaryColor,
       body: Stack(
@@ -33,11 +35,11 @@ class _LoginPageState extends State<LoginPage> {
           positionedCircle(screenSize, 0, 0, kPrimaryColor, mitadW),
           positionedCircle(screenSize, mitadW, 0, kSecondaryColor, mitadW),
           positionedCircle(
-              screenSize, 0, screenSize.height * .8, kSecondaryColor, mitadW),
-          positionedCircle(screenSize, mitadW, screenSize.height * .8,
+              screenSize, 0, screenSize.height * .77, kSecondaryColor, mitadW),
+          positionedCircle(screenSize, mitadW, (screenSize.height * .77),
               kPrimaryColor, mitadW),
-          positionedCircle(screenSize, mitadW, screenSize.height * .8,
-              kSecondaryColor, mitadW * .65)
+          positionedCircle(screenSize, mitadW + mitadW / 4,
+              screenSize.height * .77 + mitadW / 4, kSecondaryColor, mitadW / 2)
         ],
       ),
     );
