@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     //SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: kSecondaryColor,
       body: Stack(
         children: <Widget>[
@@ -52,7 +53,48 @@ class _LoginPageState extends State<LoginPage> {
                   color: kSecondaryColor,
                   borderRadius: BorderRadius.circular(mitadW),
                 ),
-              ))
+              )),
+          Positioned(
+              child: Container(
+                  padding: EdgeInsets.only(left: mitadW / 4, right: mitadW / 4),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(height: mitadW),
+                      Text(
+                        "Personal",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: kSecondaryColor,
+                          fontSize: mitadW / 4,
+                        ),
+                      ),
+                      Text(
+                        "Me",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: kSecondaryColor,
+                            fontSize: mitadW / 4),
+                      ),
+                      // SizedBox(height: mitadW * 1.5),
+                      TextField(
+                          decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: kSecondaryColor),
+                        enabledBorder: new UnderlineInputBorder(
+                            borderSide: new BorderSide(color: kSecondaryColor)),
+                      )),
+                      TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: "Password",
+                            labelStyle: TextStyle(color: kSecondaryColor),
+                            enabledBorder: new UnderlineInputBorder(
+                                borderSide:
+                                    new BorderSide(color: kSecondaryColor)),
+                          )),
+                    ],
+                  ))),
         ],
       ),
     );
