@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double mitadW = screenSize.width / 2;
-    // double mitadH = screenSize.height / 2;
+    double mitadH = screenSize.height / 2;
     //SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
@@ -34,12 +34,25 @@ class _LoginPageState extends State<LoginPage> {
           //seccion de circulares
           positionedCircle(screenSize, 0, 0, kPrimaryColor, mitadW),
           positionedCircle(screenSize, mitadW, 0, kSecondaryColor, mitadW),
-          positionedCircle(
-              screenSize, 0, screenSize.height * .77, kSecondaryColor, mitadW),
           positionedCircle(screenSize, mitadW, (screenSize.height * .77),
               kPrimaryColor, mitadW),
-          positionedCircle(screenSize, mitadW + mitadW / 4,
-              screenSize.height * .77 + mitadW / 4, kSecondaryColor, mitadW / 2)
+          positionedCircle(
+              screenSize,
+              mitadW + mitadW / 4,
+              screenSize.height * .77 + mitadW / 4,
+              kSecondaryColor,
+              mitadW / 2),
+          Positioned(
+              top: screenSize.height * .6,
+              left: 0,
+              child: Container(
+                height: screenSize.height * .4,
+                width: mitadW,
+                decoration: BoxDecoration(
+                  color: kSecondaryColor,
+                  borderRadius: BorderRadius.circular(mitadW),
+                ),
+              ))
         ],
       ),
     );
