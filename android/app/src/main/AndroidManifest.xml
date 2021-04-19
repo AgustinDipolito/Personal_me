@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firebase_git">
+    package="com.example.personalMe">
    <application
-        android:label="firebase_git"
+        android:label="personalMe"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

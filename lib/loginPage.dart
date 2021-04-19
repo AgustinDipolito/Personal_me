@@ -1,6 +1,8 @@
 import 'dart:ui';
-import 'package:firebase_git/constants.dart';
+import 'package:personal_me/authentication_services.dart';
+import 'package:personal_me/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -16,7 +18,16 @@ class _LoginPageState extends State<LoginPage> {
     double mitadW = screenSize.width / 2;
     // ignore: unused_local_variable
     double mitadH = screenSize.height / 2;
-    //SystemChrome.setEnabledSystemUIOverlays([]);
+    final passwC = TextEditingController();
+    final emailC = TextEditingController();
+
+    @override
+    // ignore: unused_element
+    void dispose() {
+      passwC.dispose();
+      emailC.dispose();
+      super.dispose();
+    }
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -74,13 +85,16 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     // SizedBox(height: mitadW * 1.5),
                     TextField(
+                        controller: emailC,
                         decoration: InputDecoration(
-                      labelText: 'Email',
-                      labelStyle: TextStyle(color: kSecondaryColor),
-                      enabledBorder: new UnderlineInputBorder(
-                          borderSide: new BorderSide(color: kSecondaryColor)),
-                    )),
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: kSecondaryColor),
+                          enabledBorder: new UnderlineInputBorder(
+                              borderSide:
+                                  new BorderSide(color: kSecondaryColor)),
+                        )),
                     TextField(
+                        controller: passwC,
                         obscureText: true,
                         decoration: InputDecoration(
                           labelText: "Password",
@@ -94,12 +108,17 @@ class _LoginPageState extends State<LoginPage> {
                         Expanded(child: SizedBox()),
                         ElevatedButton.icon(
                             onPressed: () {
+                              context.read<AuthenticationService>().signIn(
+                                    email: emailC.text.trim(),
+                                    password: passwC.text.trim(),
+                                  );
+
                               print("je");
                             },
                             label: Text("Login",
                                 style: TextStyle(color: kPrimaryColor)),
                             icon: Icon(
-                              Icons.forward,
+                              Icons.arrow_forward_rounded,
                               color: kPrimaryColor,
                             ),
                             style: ElevatedButton.styleFrom(

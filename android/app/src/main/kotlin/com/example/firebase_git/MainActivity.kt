@@ -1,4 +1,4 @@
-package com.example.firebase_git
+package com.example.personalMe
 import androidx.core.view.WindowCompat 
 import io.flutter.embedding.android.FlutterActivity
 

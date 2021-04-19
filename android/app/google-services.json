@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "506287584496",
+    "project_id": "personalme-985ff",
+    "storage_bucket": "personalme-985ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506287584496:android:fd1e99414e97260ea53e35",
+        "android_client_info": {
+          "package_name": "com.example.personalMe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506287584496-3rra9i1lj5afpprhj95ejsk4dbg1gf6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.personalMe",
+            "certificate_hash": "14627d7aca30afe94b467f4984805133ae49fc1d"
+          }
+        },
+        {
+          "client_id": "506287584496-rdscsblvcitcikpke9ucfp0v0rnfqa24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwHuuwdSEHgRxkLKIHpV-fsxBlmlhFonk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506287584496-rdscsblvcitcikpke9ucfp0v0rnfqa24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
