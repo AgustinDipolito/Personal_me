@@ -15,13 +15,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        body: FloatingActionButton(
-          onPressed: () {
-            context.read<AuthenticationService>().signOut();
-          },
-          child: Icon(Icons.exit_to_app),
-        ),
-      ),
+          body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: () {
+              context.read<AuthenticationService>().signOut();
+            },
+            child: Icon(Icons.exit_to_app),
+          ),
+        ],
+      )),
     );
   }
 }
